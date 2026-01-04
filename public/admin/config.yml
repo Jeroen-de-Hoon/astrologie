@@ -1,0 +1,20 @@
+backend:
+  name: github
+  repo: Jeroen-de-Hoon/astrologie
+  branch: main
+
+media_folder: "public/uploads"
+public_folder: "/uploads"
+
+collections:
+  - name: "blog"
+    label: "Blog"
+    folder: "src/content/blog"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Titel", name: "title", widget: "string" }
+      - { label: "Beschrijving", name: "description", widget: "text" }
+      - { label: "Publicatiedatum", name: "pubDate", widget: "datetime" }
+      - { label: "Header afbeelding", name: "heroImage", widget: "image", required: false }
+      - { label: "Inhoud", name: "body", widget: "markdown" }
